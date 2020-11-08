@@ -62,12 +62,13 @@ export default {
         .then(response => {
           this.info = response.data;
           this.checkNumberIngredients();
+          this.imgSrc = this.info.meals[0].strMealThumb;
         })
         .catch(e => {
           this.errors.push(e)
         })
-        this.checkNumberIngredients();
-        this.imgSrc = this.info.meals[0].strMealThumb; //is loading the previous image
+
+         
     },
     checkNumberIngredients: function (){
       this.numIngredients = 0;
